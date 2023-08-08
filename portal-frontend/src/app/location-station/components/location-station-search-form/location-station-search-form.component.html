@@ -1,0 +1,21 @@
+<div class="row">
+    <div class="col-xs-12 col-md-6">
+        <mat-form-field appearance="fill" style="width: 100%;">
+            <mat-label>Steckertyp Auswahl</mat-label>
+            <mat-select matNativeControl [formControl]="plugTypeFormControl">
+                <mat-option *ngFor="let p of plugTypes" [value]="p.key" >
+                {{p.value}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </div>
+    <div class="col-xs-12 col-md-6">
+        <mat-label>Radius Auswahl</mat-label>
+        <mat-slider color="accent" [max]="maxRadius" [min]="minRadius" [discrete]="true" style="width: 95%;">
+            <input matSliderThumb [formControl]="radiusFormControl">
+        </mat-slider>
+    </div>
+    <div class="col-xs-12 right">
+        <button mat-raised-button (click)="onSearchButtonClicked()">Suchen</button>
+    </div>
+</div>

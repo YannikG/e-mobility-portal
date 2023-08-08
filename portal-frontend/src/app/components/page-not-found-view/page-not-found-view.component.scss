@@ -1,0 +1,26 @@
+.not-found-text {
+    font-size: 3pc;
+    line-height: 50px;
+    font-weight: bold;
+}
+.not-found-text > .for-o-for {
+    font-size: 5pc;
+    line-height: 50px;
+    color: orangered;
+}
+
+.not-found-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.not-found-image {
+    max-height: 20em;
+}

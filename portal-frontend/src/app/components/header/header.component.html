@@ -1,0 +1,26 @@
+<mat-toolbar color="primary" class="mat-elevation-z6">
+    <img [routerLink]="['/']" height="42px" src="assets/logo_without_text.jpg" alt="eMobility Portal logo"/>
+    <span [routerLink]="['/']" style="padding-left: 1em;">eMobility Portal</span>    
+    <span class="spacer"></span>
+    <button [routerLink]="['/favorites']" *ngIf="user" mat-icon-button aria-label="Favorites">
+        <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button [mat-menu-trigger-for]="userMenu" aria-label="User">
+      <mat-icon>account_circle</mat-icon>
+    </button>
+</mat-toolbar>
+
+<mat-menu #userMenu="matMenu">
+  <button [routerLink]="['/user/profile']" id="settings-button" mat-menu-item *ngIf="user">
+    <mat-icon>settings</mat-icon>
+    <span>{{user.name}}</span>
+  </button>
+  <button id="logout-button" (click)="logout()" mat-menu-item *ngIf="user">
+    <mat-icon>logout</mat-icon>
+    <span>Logout</span>
+  </button>
+  <button id="login-button" (click)="login()" mat-menu-item *ngIf="!user">
+    <mat-icon>login</mat-icon>
+    <span>Login</span>
+  </button>
+</mat-menu>

@@ -1,0 +1,20 @@
+<div class="container-fluid user-profile-page-spacer">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1 *ngIf="user">{{user.name}} Profil</h1>
+            <h1 *ngIf="!user">Mein Profil</h1>
+        </div>
+    </div>
+    <div class="row" *ngIf="shouldDisplayToken()">
+        <div class="col-xs-12">
+            <button mat-raised-button (click)="getToken()">Get Token</button>
+        </div>
+        <div class="col-xs-12" style="padding-top: 1em;">
+            <mat-form-field  appearance="fill" style="width: 100%; min-height: 3em;">
+                <mat-label>Token</mat-label>
+                <textarea [value]="token" matInput ></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+    <app-no-results></app-no-results>
+</div>

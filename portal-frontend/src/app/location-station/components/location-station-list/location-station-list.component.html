@@ -1,0 +1,12 @@
+<mat-list *ngIf="locationStations.length > 0">
+    <mat-list-item lines="5" *ngFor="let location of locationStations" class="portal-list-item">
+        <mat-icon matListItemIcon>location_on</mat-icon>
+        <div matListItemTitle><app-station-status [status]="location.availability"></app-station-status> {{location.distance}} km, {{location.provider}}</div>
+        <div matListItemLine>{{location.street}}, {{location.postalCode}} {{location.city}}</div>
+        <div matListItemLine class="right">
+            <button name="moreDetailsButton" mat-icon-button (click)="onMoreDetailsClicked(location)"><mat-icon fontIcon="keyboard_arrow_right"></mat-icon></button>
+            <button name="navigationButton" mat-icon-button color="primary" (click)="onNavigationClicked(location)"><mat-icon fontIcon="map"></mat-icon></button>
+        </div>
+    </mat-list-item>
+</mat-list>
+<span id="NoStationsText" *ngIf="locationStations.length <= 0">Keine Stationen gefunden</span>

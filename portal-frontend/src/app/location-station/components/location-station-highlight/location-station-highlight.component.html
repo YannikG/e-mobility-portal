@@ -1,0 +1,13 @@
+<mat-card>
+    <mat-card-header>
+        <mat-card-title><mat-icon fontIcon="location_on"></mat-icon> <app-station-status [status]="locationStation.availability"></app-station-status> {{locationStation.distance}} km, {{locationStation.provider}}  </mat-card-title>
+        <mat-card-subtitle>{{locationStation.street}}, {{locationStation.postalCode}} {{locationStation.city}}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+        <p><span id="isOpen24hText" *ngIf="locationStation.isOpen24h">24h/7 geöffnet</span><span id="isNotOpen24hText" *ngIf="!locationStation.isOpen24h">Öffnungszeiten beachten</span> {{ locationStation.accessibility }}</p>
+    </mat-card-content>
+    <mat-card-actions>
+        <button id='navigationButton' mat-button (click)="onNavigationClicked()"><mat-icon fontIcon="navigation"></mat-icon>Navigation Starten</button>
+        <button id='detailButton' mat-button (click)="onMoreDetailsClicked()"><mat-icon fontIcon="keyboard_arrow_right"></mat-icon>Mehr</button>
+    </mat-card-actions>
+</mat-card>

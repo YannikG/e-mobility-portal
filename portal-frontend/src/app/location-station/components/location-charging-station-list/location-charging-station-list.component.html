@@ -1,0 +1,9 @@
+<mat-list>
+    <mat-list-item  lines="10" *ngFor="let station of chargingStations; let i = index" class="portal-list-item">
+        <mat-icon matListItemIcon>power</mat-icon>
+        <div matListItemTitle><app-station-status [status]="station.availability"></app-station-status> Station #{{i + 1}} </div>
+        <div matListItemLine>
+            <span *ngFor="let plug of station.plugs">{{plug.plugName}} <i *ngIf="station.plugs.indexOf(plug) != station.plugs.length - 1">,</i></span>
+        </div>
+    </mat-list-item>
+</mat-list>

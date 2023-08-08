@@ -1,0 +1,19 @@
+// material theme
+@import "./styles/theme.scss";
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.right > * {
+    float: right;
+    right: 0px !important;
+  }
+  .left > * {
+    float: left;
+    left: 0px !important;
+  }
+
+.portal-list-item {
+  padding-top: 1em;
+  border-bottom: 1px solid rgba(0,0,0,.12);
+}

@@ -1,0 +1,23 @@
+{
+	"c9bf34df-d592-42f5-b820-76463fd11681": {
+		"task": "scriptExecute",
+		"label": "transformPlugs",
+		"description": "",
+		"createTime": "202305071821",
+		"updateTime": "202305071821",
+		"state": {
+			"scriptFiles": [
+				"/eMobilityPortalDatabase/Scripts/query_plugs.sql"
+			],
+			"dataSources": [
+				{
+					"project": "eMobilityPortalDatabase",
+					"dataSource": "postgres-jdbc-187e6fefffb-a48386505c94eef"
+				}
+			],
+			"ignoreErrors": false,
+			"dumpQueryResultsToLog": false,
+			"autoCommit": false
+		}
+	}
+}

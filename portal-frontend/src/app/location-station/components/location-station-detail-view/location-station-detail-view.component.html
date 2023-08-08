@@ -1,0 +1,48 @@
+<div id="chargingStationContent" class="container-fluid portal-location-detail-page-spacer" *ngIf="!isLoading && !isError">
+    <div class="row">
+        <div class="col-xs-12">
+            <h1>{{ locationStation.distance}} km, {{ locationStation.provider }}</h1>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <address>
+                <span>{{ locationStation.street }}</span>
+                <span>{{ locationStation.postalCode }} {{ locationStation.city }}</span>
+            </address>
+        </div>
+    </div>
+    <div class="row" style="padding-top: 3em; padding-bottom: 3em;">
+        <div class="col-xs-12 right">
+            <button id='navigationButton' mat-raised-button color="primary" (click)="onNavigationClicked()"><mat-icon fontIcon="navigation"></mat-icon>Navigation Starten</button>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12"  style="padding-top: 1em;">
+            <h2>Öffnungszeiten</h2>
+        </div>
+        <div class="col-xs-12">
+            <p><span id="isOpen24hText" *ngIf="locationStation.isOpen24h">24h/7 geöffnet</span><span id="isNotOpen24hText" *ngIf="!locationStation.isOpen24h">Öffnungszeiten beachten</span> {{ locationStation.accessibility }}</p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12" style="padding-top: 1em;">
+            <h2>Ladestationen</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <app-location-charging-station-list [chargingStations]="locationStation.chargingStations"></app-location-charging-station-list>
+        </div>
+    </div>
+</div>
+<div class="container-fluid portal-location-detail-page-spacer" *ngIf="isLoading">
+    <div class="row center-xs">
+        <div class="col-xs-6">
+            <mat-spinner></mat-spinner>
+        </div>
+    </div>
+</div>
+<div class="container-fluid portal-location-detail-page-spacer" *ngIf="isError">
+    <app-no-results></app-no-results>
+</div>

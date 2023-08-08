@@ -1,0 +1,24 @@
+.status-available {
+    background-color: green;
+    color: white !important;
+}
+
+.status-occupied {
+    background-color: red;
+    color: white !important;
+}
+
+.status-unknown {
+    background-color: orange;
+}
+
+.station-chip {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 16px;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1;
+}
