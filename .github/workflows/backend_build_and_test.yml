@@ -12,6 +12,10 @@ on:
   pull_request:
     branches: [ "main", "master" ]
 
+defaults:
+  run:
+    working-directory: ./portal-backend/Portal
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -22,13 +26,10 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Restore dependencies
-      working-directory: ./portal-backend/Portal
       run: dotnet restore
     - name: Build
-      working-directory: ./portal-backend/Portal
       run: dotnet build --no-restore
     - name: Run Tests
-      working-directory: ./portal-backend/Portal
       run: dotnet test --no-build --logger:nunit 2> /dev/null ||true
     - name: Publish Test Results
       uses: EnricoMi/publish-unit-test-result-action@v2
